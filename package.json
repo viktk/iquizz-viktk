@@ -1,0 +1,23 @@
+{
+  "name": "iquizz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "pg": "^8.3.0",
+    "sequelize": "^6.3.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon",
+    "start": "nodemon ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

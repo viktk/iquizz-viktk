@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h2 class="h1 display-4">Administration</h2>
+        <p class="lead">Espace permettant de gérer les quizzes !</p>
+    </div>
+
+
+<div class="gestion-modif">
+    <div class="admin-tag">
+        <a href="/admin/addtag">
+            <p class="admin-btn-txt">Ajouter un nouveau thème</p>
+        </a>
+    </div>
+
+    <div class="admin-tag">
+        <a href="/admin/updatetag">
+            <p class="admin-btn-txt">Modifier un thème</p>
+        </a>
+    </div>
+
+    <div class="admin-tag">
+        <a href="/admin/deletetag">
+            <p class="admin-btn-txt">Supprimer un thème</p>
+        </a>
+    </div>
+
+    <div class="admin-tag">
+        <a href="/admin/linktag">
+            <p class="admin-btn-txt">Associer un thème à un quiz</p>
+        </a>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

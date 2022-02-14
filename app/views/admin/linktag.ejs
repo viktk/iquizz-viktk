@@ -1,0 +1,52 @@
+<%- include('../partials/header') %>
+
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h2 class="h1 display-4">Administration</h2>
+        <p class="lead">Associer un thème à un quiz</p>
+        <a href="/admin/">
+            <span>retour</span>
+        </a>
+    </div>
+
+    <form action="/admin/linktag" method="POST" class="form-admin">
+
+        <%if (locals.error) {%>
+            <div class="alert alert-danger">
+                <p><%=error%></p>
+            </div>
+        <% } %>
+
+        <%if (locals.message) {%>
+            <div class="alert alert-success">
+                <p><%=message%></p>
+                <a href="/tags">
+                    <p>Voir la liste des thèmes</p>
+                </a>
+            </div>
+        <% } %>
+
+
+        <div class="form1">
+
+            <select name="nametag" id="nametag">
+                <option value="">--- Choisissez un thème ---</option>
+                <% for (let theme of nameTag) { %>
+                <option value="<%= theme.name %>"><%= theme.name %></option>
+                <% } %>
+            </select>
+
+            <select name="quiztitle" id="quiztitle">
+                <option value="">--- Choisissez un quiz---</option>
+                <% for (let quiz of quizList) { %>
+                <option value="<%= quiz.title %>"><%= quiz.title %></option>
+                <% } %>
+            </select>
+
+            <button type="submit" class="btn btn-primary formstyle">Associer</button>
+        </div>
+
+    </form>
+
+
+<%- include('../partials/footer') %>

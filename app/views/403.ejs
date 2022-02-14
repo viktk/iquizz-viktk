@@ -1,0 +1,17 @@
+<%- include('./partials/header') %>
+
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <p class="lead">Une erreur est survenue, nos équipes sont sur le coup.</p>
+
+        <% if (typeof error !== 'undefined') {%>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% }%>
+
+        <img src="/images/error-403.png" height="300" width="500" alt="error 403">
+    </div>
+
+
+<%- include('./partials/footer') %> 

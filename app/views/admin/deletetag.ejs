@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h2 class="h1 display-4">Administration</h2>
+        <p class="lead">Suppression du thème</p>
+        <a href="/admin/">
+            <span>retour</span>
+        </a>
+    </div>
+
+
+    <form action="/admin/deletetag" method="POST" class="form-admin">
+
+        <%if (locals.error) {%>
+            <div class="alert alert-danger">
+                <p><%=error%></p>
+            </div>
+        <% } %>
+
+        <%if (locals.message) {%>
+            <div class="alert alert-success">
+                <p><%=message%></p>
+                <a href="/tags">
+                    <p>Voir la liste des thèmes</p>
+                </a>
+            </div>
+        <% } %>
+
+        <div class="form1">
+            <select name="name" id="name">
+                <option value="">--- Choisissez un thème à supprimer ---</option>
+                <% for (let theme of tagList) { %>
+                <option value="<%= theme.name %>"><%= theme.name %></option>
+                <% } %>
+            </select>
+            <button type="submit" class="btn btn-primary formstyle">Supprimer</button>
+        </div>
+
+    </form>
+
+
+<%- include('../partials/footer') %>

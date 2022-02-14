@@ -1,0 +1,31 @@
+<%-include('partials/header')%>
+
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <div class="card-flex">
+                <h2 class="h1 display-4 tilte-big">Bienvenue sur O'Quiz</h2>
+                <div class="welcome-card">
+                    <p class="lead title-blue">Tester sa culture, créer des quizz, défier ses amis</p>
+                    <p class="lead">Jouez à nos <span><%= quizList.length %> quizz</span> et participez en créant vos propres quiz simplement et <span>gratuitement</span>.</p>
+                    <p class="lead">Plusieurs thèmes à découvrir et à partager.</p>
+                    <p class="lead title-blue2">Sur <span>o'Quizz</span>, il y a de tout, pour tous les goûts !</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card-deck row mb-3 text-center">
+
+<%#
+    Je vais avoir besoin du titre, de la description, de l'id et du nom complet de l'auteur du quiz.
+        -Un tableau JS (array) est itérable
+            (Les info ne sont pas organisé à travers des propriétés, mais sont positionnés dans le tableau dans un ordre précis).
+        -Un objet JS est énumérable et non itérable.
+            (les informations qui sont stocké/organisé dans cette objet n'ont pas d'ordre précis, les propriétés sont énumérable et mais pas récupérable dans un sens particulier)
+%>
+
+        <%for (const quiz of quizList) {%>
+            <%-include('partials/quizBlock', { quiz })%>
+        <%}%>
+            
+        </div>
+<%-include('partials/footer')%>
